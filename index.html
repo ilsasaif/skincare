@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ILSEA | Pure Skincare</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --green: #344b32;
+    --olive: #718052;
+    --light: #f4f4eb;
+    --gold: #c5a15a;
+    --white: #ffffff;
+    --text: #30352d;
+    --muted: #77796f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    background: var(--white);
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+section {
+    padding: 85px 7%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(30px, 4vw, 43px);
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 42px;
+    font-size: 14px;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 76px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,.97);
+    border-bottom: 1px solid #e6dfcc;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--green);
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 13px;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: var(--olive);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart-button {
+    background: var(--green);
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    padding: 10px 16px;
+}
+
+.cart-button span {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.menu-button {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--green);
+    font-size: 27px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 590px;
+    padding: 70px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 25%, #c9d0ac 0, transparent 27%),
+        linear-gradient(120deg, #344b32, #586d47);
+    color: white;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    color: #e3d1a2;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5.5vw, 72px);
+    line-height: 1.12;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #e0c17a;
+    font-style: italic;
+}
+
+.hero-text {
+    max-width: 470px;
+    line-height: 1.9;
+    color: #e6e9dc;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding: 13px 25px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.button.gold {
+    background: var(--gold);
+    color: white;
+}
+
+.button.outline {
+    border-color: white;
+    color: white;
+    margin-left: 8px;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px #00000020;
+}
+
+/* HERO PRODUCTS */
+
+.hero-visual {
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-circle {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #e6dfc8, #9cab7c);
+    box-shadow: 0 25px 65px #00000020;
+}
+
+.hero-bottles {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 420px);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 12px;
+}
+
+.bottle {
+    position: relative;
+    width: 100px;
+    height: 205px;
+    border-radius: 15px 15px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset -10px 0 20px #00000012,
+                0 20px 30px #00000022;
+    animation: float 4s ease-in-out infinite;
+}
+
+.bottle:nth-child(2) {
+    height: 260px;
+    width: 118px;
+    animation-delay: .6s;
+}
+
+.bottle:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.bottle.green {
+    background: linear-gradient(100deg, #b7c29b, #788961);
+}
+
+.bottle.cream {
+    background: linear-gradient(100deg, #f7edcf, #d5c49c);
+}
+
+.bottle.olive {
+    background: linear-gradient(100deg, #83936b, #455a3b);
+}
+
+.bottle .cap {
+    position: absolute;
+    width: 37px;
+    height: 30px;
+    top: -23px;
+    border-radius: 5px 5px 2px 2px;
+    background: #d4bc83;
+}
+
+.bottle:nth-child(2) .cap {
+    width: 43px;
+    height: 24px;
+    top: -18px;
+}
+
+.bottle .label {
+    text-align: center;
+    color: var(--green);
+    width: 100%;
+    background: #fffdf2dd;
+    padding: 13px 3px;
+}
+
+.bottle.olive .label {
+    background: #f4f0dbe8;
+}
+
+.label strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.label small {
+    display: block;
+    font-size: 7px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.hero-note {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 15px;
+    background: #fff;
+    color: var(--green);
+    padding: 13px 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px #00000015;
+    font-size: 11px;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-13px); }
+}
+
+/* ANNOUNCEMENT */
+
+.announcement {
+    background: #eee8d4;
+    color: var(--green);
+    text-align: center;
+    padding: 13px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* SKIN QUIZ */
+
+.skin-section {
+    background: var(--light);
+}
+
+.skin-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.skin-card {
+    background: white;
+    border: 1px solid #e5dfcc;
+    border-radius: 18px;
+    padding: 24px 12px;
+    text-align: center;
+    transition: .35s;
+}
+
+.skin-card:hover,
+.skin-card.active {
+    background: var(--green);
+    color: white;
+    transform: translateY(-7px);
+    box-shadow: 0 14px 30px #344b3220;
+}
+
+.skin-card h3 {
+    font-size: 19px;
+    margin: 14px 0 8px;
+}
+
+.skin-card p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.skin-card:hover p,
+.skin-card.active p {
+    color: #e4e8da;
+}
+
+/* CSS FACE ILLUSTRATIONS */
+
+.face {
+    width: 108px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 48% 48% 44% 44%;
+    background: linear-gradient(135deg, #ffe3c9, #e9b18e);
+    box-shadow: inset -7px -5px 10px #b56f4930;
+    animation: faceFloat 3s ease-in-out infinite;
+}
+
+.skin-card:nth-child(2) .face {
+    background: linear-gradient(135deg, #ffe6cf, #e8b68f);
+}
+
+.skin-card:nth-child(3) .face {
+    background: linear-gradient(135deg, #f8d8b9, #dca17a);
+}
+
+.skin-card:nth-child(4) .face {
+    background: linear-gradient(135deg, #ffe2c7, #e7b391);
+}
+
+.hair {
+    position: absolute;
+    top: -5px;
+    left: -3px;
+    width: 114px;
+    height: 49px;
+    background: #48352d;
+    border-radius: 55% 55% 22% 22%;
+}
+
+.eye {
+    position: absolute;
+    top: 52px;
+    width: 8px;
+    height: 11px;
+    background: #48352d;
+    border-radius: 50%;
+    animation: blink 4s infinite;
+    z-index: 2;
+}
+
+.eye.left { left: 29px; }
+.eye.right { right: 29px; }
+
+.blush {
+    position: absolute;
+    top: 66px;
+    width: 18px;
+    height: 9px;
+    border-radius: 50%;
+    background: #df8d8c;
+    opacity: .55;
+}
+
+.blush.left { left: 11px; }
+.blush.right { right: 11px; }
+
+.nose {
+    position: absolute;
+    top: 58px;
+    left: 52px;
+    height: 12px;
+    border-left: 1px solid #bd816d;
+}
+
+.mouth {
+    position: absolute;
+    top: 77px;
+    left: 43px;
+    width: 22px;
+    height: 10px;
+    border-bottom: 2px solid #a65355;
+    border-radius: 50%;
+}
+
+.face-decoration {
+    position: absolute;
+    top: 35px;
+    right: -18px;
+    color: var(--gold);
+    font-size: 25px;
+    animation: twinkle 2s infinite;
+}
+
+@keyframes faceFloat {
+    0%,100% { translate: 0 0; }
+    50% { translate: 0 -5px; }
+}
+
+@keyframes blink {
+    0%, 92%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(.1); }
+}
+
+@keyframes twinkle {
+    0%,100% { opacity: .6; transform: scale(.9); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.skin-result {
+    max-width: 700px;
+    margin: 30px auto 0;
+    padding: 26px;
+    background: white;
+    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #344b3210;
+}
+
+.skin-result h3 {
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.skin-result p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* CATEGORIES */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.category {
+    position: relative;
+    overflow: hidden;
+    min-height: 190px;
+    border-radius: 18px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background: linear-gradient(135deg, #e6ead8, #bdc8a6);
+    transition: .3s;
+}
+
+.category:nth-child(2) {
+    background: linear-gradient(135deg, #f5edda, #d9c99f);
+}
+
+.category:nth-child(3) {
+    background: linear-gradient(135deg, #c9d5c0, #8da181);
+}
+
+.category:hover {
+    transform: translateY(-5px);
+}
+
+.category .decor {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 85px;
+    opacity: .25;
+}
+
+.category h3 {
+    font-size: 24px;
+    color: var(--green);
+    position: relative;
+}
+
+.category p {
+    font-size: 12px;
+    position: relative;
+    margin-top: 6px;
+}
+
+/* PRODUCTS */
+
+.products-section {
+    background: #fafaf6;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.filter-btn {
+    border: 1px solid var(--olive);
+    color: var(--green);
+    background: white;
+    padding: 10px 19px;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: .25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--green);
+    color: white;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #eae8df;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px #344b3215;
+}
+
+.product-card.hidden {
+    display: none;
+}
+
+.product-art {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #eef0e5, #dce3cd);
+}
+
+.product-card:nth-child(2) .product-art {
+    background: linear-gradient(145deg, #f6f0df, #e6d6b1);
+}
+
+.product-card:nth-child(3) .product-art {
+    background: linear-gradient(145deg, #e0eadf, #c0d0b8);
+}
+
+.product-card:nth-child(4) .product-art {
+    background: linear-gradient(145deg, #eae5d4, #d4c8a7);
+}
+
+.product-bottle {
+    position: relative;
+    width: 95px;
+    height: 145px;
+    border-radius: 12px 12px 17px 17px;
+    background: linear-gradient(100deg, #d4dabb, #8d9e72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 8px 14px 20px #00000018;
+    transition: .35s;
+}
+
+.product-card:hover .product-bottle {
+    transform: translateY(-6px) rotate(-2deg);
+}
+
+.product-bottle.tall {
+    height: 160px;
+    width: 80px;
+}
+
+.product-bottle.jar {
+    height: 100px;
+    width: 120px;
+    border-radius: 13px 13px 22px 22px;
+    background: linear-gradient(100deg, #f4ebd0, #d5c59f);
+}
+
+.product-bottle.dark {
+    background: linear-gradient(100deg, #708563, #3e5638);
+}
+
+.product-bottle .lid {
+    position: absolute;
+    width: 39px;
+    height: 20px;
+    background: #c5a15a;
+    border-radius: 4px 4px 1px 1px;
+    top: -15px;
+}
+
+.product-bottle.jar .lid {
+    width: 120px;
+    height: 16px;
+    top: -13px;
+    border-radius: 5px 5px 2px 2px;
+}
+
+.product-label {
+    width: 100%;
+    background: #fffdf0e8;
+    padding: 11px 2px;
+    text-align: center;
+    color: var(--green);
+}
+
+.product-label strong {
+    font-family: 'Playfair Display', serif;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.product-label small {
+    display: block;
+    font-size: 7px;
+    margin-top: 5px;
+    letter-spacing: .6px;
+}
+
+.product-info {
+    padding: 17px;
+}
+
+.product-category {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--olive);
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin: 7px 0;
+    color: var(--green);
+}
+
+.product-info p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+    min-height: 39px;
+}
+
+.product-price {
+    font-weight: 600;
+    color: var(--green);
+    margin: 12px 0;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--green);
+    border-radius: 25px;
+    background: var(--green);
+    color: white;
+    font-size: 12px;
+    transition: .25s;
+}
+
+.add-btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+/* ABOUT */
+
+.about-section {
+    background: var(--light);
+}
+
+.about-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about-art {
+    min-height: 320px;
+    border-radius: 20px;
+    background: linear-gradient(140deg, #dfe6d2, #a6b68e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.about-art .big-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 65px);
+    letter-spacing: 5px;
+    color: var(--green);
+    animation: float 4s infinite;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    color: var(--green);
+    margin-bottom: 18px;
+}
+
+.about-text p {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+
+/* CONTACT */
+
+.contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.contact-info h3 {
+    color: var(--green);
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 2;
+}
+
+.contact-form {
+    padding: 25px;
+    border: 1px solid #e7e1cf;
+    border-radius: 18px;
+    background: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #deded2;
+    border-radius: 10px;
+    padding: 13px;
+    margin-bottom: 13px;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--olive);
+}
+
+.contact-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+    background: var(--green);
+    color: white;
+    padding: 13px;
+    border-radius: 30px;
+}
+
+#formMessage {
+    margin-top: 12px;
+    color: var(--green);
+    font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--green);
+    color: #e8eadf;
+    text-align: center;
+    padding: 35px 7%;
+}
+
+footer .logo {
+    color: #e1c27c;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+footer p {
+    font-size: 11px;
+    line-height: 2;
+}
+
+/* CART DRAWER */
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: #00000065;
+    z-index: 199;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.cart-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-drawer {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: -430px;
+    width: 400px;
+    max-width: 92%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    transition: .35s;
+    box-shadow: -10px 0 40px #00000020;
+}
+
+.cart-drawer.open {
+    right: 0;
+}
+
+.cart-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+    border-bottom: 1px solid #e5dfcc;
+}
+
+.cart-head h2 {
+    color: var(--green);
+}
+
+.close-cart {
+    border: none;
+    background: transparent;
+    font-size: 27px;
+    color: var(--green);
+}
+
+.cart-items {
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    padding: 14px 0;
+}
+
+.cart-item h4 {
+    color: var(--green);
+    font-size: 13px;
+}
+
+.cart-item p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.remove-btn {
+    border: none;
+    background: transparent;
+    color: #a34e43;
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.cart-total {
+    background: var(--light);
+    padding: 22px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 16px;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 13px;
+}
+
+.empty-cart {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skin-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        height: 68px;
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        padding: 15px 6%;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-bottom: 1px solid #e5dfcc;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 13px 0;
+        border-bottom: 1px solid #f0eee6;
+    }
+
+    .cart-button {
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 65px 5% 40px;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-visual {
+        min-height: 310px;
+    }
+
+    .hero-circle {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-bottles {
+        transform: scale(.85);
+    }
+
+    .hero-note {
+        right: 0;
+        bottom: 0;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-wrap,
+    .contact-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .about-art {
+        min-height: 240px;
+    }
+
+    .about-text h2 {
+        font-size: 30px;
+    }
+
+    .product-grid {
+        gap: 13px;
+    }
+
+    .product-art {
+        height: 175px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: 15px;
+    }
+
+    .product-info p {
+        font-size: 10px;
+    }
+
+    .product-bottle {
+        transform: scale(.85);
+    }
+
+    .product-card:hover .product-bottle {
+        transform: scale(.85) translateY(-5px);
+    }
+
+    .skin-card {
+        padding: 20px 8px;
+    }
+
+    .skin-card h3 {
+        font-size: 16px;
+    }
+
+    .face {
+        transform: scale(.85);
+        margin-bottom: -5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <a href="#home" class="logo">ILSEA<span>✦</span></a>
+
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#skin">Skin Types</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">Our Story</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+        <button class="cart-button" id="openCart">
+            Bag <span id="cartCount">0</span>
+        </button>
+        <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+    </div>
+</header>
+
+<!-- HOME PAGE -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content reveal">
+        <p class="eyebrow">Nature meets skincare</p>
+
+        <h1>
+            Your skin,<br>
+            Your ritual,<br>
+            <span>Your ILSEA glow.</span>
+        </h1>
+
+        <p class="hero-text">
+            Discover gentle skincare essentials designed to make
+            your daily routine feel simple, beautiful and personal.
+        </p>
+
+        <a href="#skin" class="button gold">Discover Your Skin Type</a>
+        <a href="#shop" class="button outline">Explore Products</a>
+    </div>
+
+    <div class="hero-visual">
+        <div class="hero-circle"></div>
+
+        <div class="hero-bottles">
+
+            <div class="bottle green">
+                <div class="cap"></div>
+                <div class="label">
+                    <strong>ILSEA</strong>
+                    <small>GENTLE CARE</small>
+                    <small>FACE WASH</small>
+                </div>
+            </div>
+
+            <div class="bottle cream">
+                <div class="cap"></div>
+                <div class="label">
+                    <strong>ILSEA</strong>
+                    <small>DAILY HYDRATION</small>
+                    <small>MOISTURIZER</small>
+                </div>
+            </div>
+
+            <div class="bottle olive">
+                <div class="cap"></div>
+                <div class="label">
+                    <strong>ILSEA</strong>
+                    <small>DAILY SHIELD</small>
+                    <small>SPF 30+</small>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-note">
+            ✦ Your everyday skincare ritual
+        </div>
+    </div>
+
+</section>
+
+<div class="announcement">
+    ✦ DISCOVER YOUR ROUTINE &nbsp; • &nbsp; SIMPLE CARE, EVERY DAY &nbsp; • &nbsp; ILSEA ✦
+</div>
+
+<!-- SKIN TYPES -->
+
+<section class="skin-section" id="skin">
+
+    <h2 class="section-title">Know Your Skin</h2>
+
+    <p class="section-subtitle">
+        Choose your skin type to discover a simple skincare routine.
+    </p>
+
+    <div class="skin-grid">
+
+        <button class="skin-card active" data-skin="normal">
+
+            <div class="face">
+                <div class="hair"></div>
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+                <span class="face-decoration">✦</span>
+            </div>
+
+            <h3>Normal Skin</h3>
+            <p>Keep your natural balance</p>
+
+        </button>
+
+        <button class="skin-card" data-skin="dry">
+
+            <div class="face">
+                <div class="hair"></div>
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+                <span class="face-decoration">♧</span>
+            </div>
+
+            <h3>Dry Skin</h3>
+            <p>Comfort and hydration</p>
+
+        </button>
+
+        <button class="skin-card" data-skin="oily">
+
+            <div class="face">
+                <div class="hair"></div>
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+                <span class="face-decoration">✧</span>
+            </div>
+
+            <h3>Oily Skin</h3>
+            <p>Lightweight daily care</p>
+
+        </button>
+
+        <button class="skin-card" data-skin="combination">
+
+            <div class="face">
+                <div class="hair"></div>
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+                <span class="face-decoration">✦</span>
+            </div>
+
+            <h3>Combination</h3>
+            <p>Care for different skin areas</p>
+
+        </button>
+
+    </div>
+
+    <div class="skin-result">
+        <h3 id="routineTitle">Your everyday essentials</h3>
+
+        <p id="routineText">
+            Start with a gentle cleanser, a suitable moisturizer
+            and broad-spectrum SPF 30 or higher during the day.
+        </p>
+    </div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+
+    <h2 class="section-title">Explore Our Collection</h2>
+
+    <p class="section-subtitle">
+        Little essentials for your everyday skincare ritual.
+    </p>
+
+    <div class="category-grid">
+
+        <a href="#shop" class="category" data-category="cleanser">
+            <span class="decor">❋</span>
+            <h3>Face Cleansers</h3>
+            <p>Start fresh. Feel refreshed. →</p>
+        </a>
+
+        <a href="#shop" class="category" data-category="moisturizer">
+            <span class="decor">✿</span>
+            <h3>Moisturizers</h3>
+            <p>Make hydration part of your day. →</p>
+        </a>
+
+        <a href="#shop" class="category" data-category="sunscreen">
+            <span class="decor">☼</span>
+            <h3>Sun Protection</h3>
+            <p>Everyday broad-spectrum protection. →</p>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- SHOP -->
+
+<section class="products-section" id="shop">
+
+    <h2 class="section-title">The ILSEA Edit</h2>
+
+    <p class="section-subtitle">
+        Find your everyday essentials.
+    </p>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="cleanser">Face Wash</button>
+        <button class="filter-btn" data-filter="moisturizer">Moisturizers</button>
+        <button class="filter-btn" data-filter="sunscreen">Sun Care</button>
+    </div>
+
+    <div class="product-grid">
+
+        <!-- PRODUCT 1 -->
+
+        <article class="product-card reveal" data-category="cleanser">
+
+            <div class="product-art">
+                <div class="product-bottle">
+                    <div class="lid"></div>
+                    <div class="product-label">
+                        <strong>ILSEA</strong>
+                        <small>PURE CLEANSE</small>
+                        <small>FACE WASH</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <span class="product-category">Daily Cleanse</span>
+                <h3>Gentle Face Wash</h3>
+                <p>A gentle cleansing step for your daily routine.</p>
+                <div class="product-price">Rs. 850</div>
+
+                <button class="add-btn"
+                    data-name="Gentle Face Wash"
+                    data-price="850">
+                    Add to Bag +
+                </button>
+            </div>
+
+        </article>
+
+        <!-- PRODUCT 2 -->
+
+        <article class="product-card reveal" data-category="moisturizer">
+
+            <div class="product-art">
+                <div class="product-bottle jar">
+                    <div class="lid"></div>
+                    <div class="product-label">
+                        <strong>ILSEA</strong>
+                        <small>SOFT HYDRATION</small>
+                        <small>FACE CREAM</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <span class="product-category">Daily Hydration</span>
+                <h3>Hydrating Moisturizer</h3>
+                <p>Helps keep skin feeling soft and hydrated.</p>
+                <div class="product-price">Rs. 1,250</div>
+
+                <button class="add-btn"
+                    data-name="Hydrating Moisturizer"
+                    data-price="1250">
+                    Add to Bag +
+                </button>
+            </div>
+
+        </article>
+
+        <!-- PRODUCT 3 -->
+
+        <article class="product-card reveal" data-category="sunscreen">
+
+            <div class="product-art">
+                <div class="product-bottle tall">
+                    <div class="lid"></div>
+                    <div class="product-label">
+                        <strong>ILSEA</strong>
+                        <small>DAILY SHIELD</small>
+                        <small>SPF 30+</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <span class="product-category">Sun Care</span>
+                <h3>Daily Sunscreen</h3>
+                <p>A daily sun-protection step for your routine.</p>
+                <div class="product-price">Rs. 1,450</div>
+
+                <button class="add-btn"
+                    data-name="Daily Sunscreen"
+                    data-price="1450">
+                    Add to Bag +
+                </button>
+            </div>
+
+        </article>
+
+        <!-- PRODUCT 4 -->
+
+        <article class="product-card reveal" data-category="moisturizer">
+
+            <div class="product-art">
+                <div class="product-bottle dark">
+                    <div class="lid"></div>
+                    <div class="product-label">
+                        <strong>ILSEA</strong>
+                        <small>GREEN RITUAL</small>
+                        <small>GEL CREAM</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <span class="product-category">Lightweight Care</span>
+                <h3>Daily Gel Cream</h3>
+                <p>A lightweight moisturizer for everyday use.</p>
+                <div class="product-price">Rs. 1,100</div>
+
+                <button class="add-btn"
+                    data-name="Daily Gel Cream"
+                    data-price="1100">
+                    Add to Bag +
+                </button>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about-section" id="about">
+
+    <div class="about-wrap">
+
+        <div class="about-art reveal">
+            <div class="big-logo">ILSEA ✦</div>
+        </div>
+
+        <div class="about-text reveal">
+
+            <p class="eyebrow" style="color:#718052">
+                A little about us
+            </p>
+
+            <h2>Skincare, Made Simple.</h2>
+
+            <p>
+                ILSEA is a skincare brand concept built around
+                simplicity, thoughtful routines and a love for
+                natural-inspired design.
+            </p>
+
+            <p>
+                From gentle cleansing to daily hydration and
+                sun protection, our website helps you explore
+                the basics of a skincare routine.
+            </p>
+
+            <a href="#shop" class="button gold">Explore Products</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">Let's Connect</h2>
+
+    <p class="section-subtitle">
+        Have a question? Send us a message.
+    </p>
+
+    <div class="contact-wrap">
+
+        <div class="contact-info">
+            <h3>We'd love to hear from you.</h3>
+
+            <p>
+                Explore the ILSEA skincare collection and discover
+                a routine that suits your needs.
+            </p>
+
+            <p>
+                ✦ Gentle skincare<br>
+                ✦ Simple daily routines<br>
+                ✦ A little more self-care
+            </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="contactEmail"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                id="contactMessage"
+                placeholder="Write your message..."
+                required
+            ></textarea>
+
+            <button type="submit">Send Message</button>
+
+            <p id="formMessage" role="status"></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <a href="#home" class="logo">ILSEA<span>✦</span></a>
+
+    <p>
+        Your skin. Your ritual. Your ILSEA glow.
+    </p>
+
+    <p>
+        © 2026 ILSEA Skincare Concept. All rights reserved.
+    </p>
+
+    <p>
+        Product names and prices are illustrative demo content.
+    </p>
+
+</footer>
+
+<!-- SHOPPING CART -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-label="Shopping bag"
+    aria-hidden="true"
+>
+
+    <div class="cart-head">
+        <h2>Your Bag</h2>
+        <button class="close-cart" id="closeCart" aria-label="Close bag">
+            ×
+        </button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Your bag is waiting for something lovely.</p>
+    </div>
+
+    <div class="cart-total">
+        <div class="total-row">
+            <span>Total</span>
+            <span id="cartTotal">Rs. 0</span>
+        </div>
+
+        <button class="checkout-btn" id="checkoutButton">
+            Continue
+        </button>
+    </div>
+
+</aside>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* MOBILE MENU */
+
+    const menuButton = document.getElementById("menuButton");
+    const nav = document.getElementById("nav");
+
+    menuButton.addEventListener("click", function () {
+        const open = nav.classList.toggle("open");
+
+        menuButton.textContent = open ? "×" : "☰";
+        menuButton.setAttribute("aria-expanded", String(open));
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            nav.classList.remove("open");
+            menuButton.textContent = "☰";
+            menuButton.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    /* SKIN TYPE ROUTINE */
+
+    const routines = {
+        normal: {
+            title: "Your everyday essentials",
+            text: "Start with a gentle cleanser, a suitable moisturizer and broad-spectrum SPF 30 or higher during the day."
+        },
+
+        dry: {
+            title: "Comfort for dry skin",
+            text: "Try a gentle cleanser and a richer moisturizer. Apply moisturizer while your skin is slightly damp, and use broad-spectrum SPF 30 or higher during the day."
+        },
+
+        oily: {
+            title: "Lightweight care for oily skin",
+            text: "Choose a gentle cleanser and a lightweight, non-comedogenic moisturizer. Oily skin still needs hydration and sun protection."
+        },
+
+        combination: {
+            title: "Balanced care for combination skin",
+            text: "Use a gentle cleanser, a suitable moisturizer and broad-spectrum SPF 30 or higher. Adjust moisturizer to the areas that need extra hydration."
+        }
+    };
+
+    const skinCards = document.querySelectorAll(".skin-card");
+    const routineTitle = document.getElementById("routineTitle");
+    const routineText = document.getElementById("routineText");
+
+    skinCards.forEach(function (card) {
+        card.addEventListener("click", function () {
+
+            skinCards.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            card.classList.add("active");
+
+            const selected = routines[card.dataset.skin];
+
+            if (selected) {
+                routineTitle.textContent = selected.title;
+                routineText.textContent = selected.text;
+            }
+        });
+    });
+
+    /* PRODUCT FILTERS */
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const products = document.querySelectorAll(".product-card");
+
+    function filterProducts(category) {
+
+        products.forEach(function (product) {
+
+            const matches =
+                category === "all" ||
+                product.dataset.category === category;
+
+            product.classList.toggle("hidden", !matches);
+        });
+
+        filterButtons.forEach(function (button) {
+            button.classList.toggle(
+                "active",
+                button.dataset.filter === category
+            );
+        });
+    }
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            filterProducts(button.dataset.filter);
+        });
+    });
+
+    document.querySelectorAll(".category").forEach(function (category) {
+        category.addEventListener("click", function () {
+            const selected = category.dataset.category;
+
+            filterProducts(selected);
+
+            filterButtons.forEach(function (button) {
+                button.classList.toggle(
+                    "active",
+                    button.dataset.filter === selected
+                );
+            });
+        });
+    });
+
+    /* SHOPPING CART */
+
+    const cart = [];
+
+    const openCartButton = document.getElementById("openCart");
+    const closeCartButton = document.getElementById("closeCart");
+    const cartDrawer = document.getElementById("cartDrawer");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
+    const checkoutButton = document.getElementById("checkoutButton");
+
+    function openCart() {
+        cartDrawer.classList.add("open");
+        cartOverlay.classList.add("open");
+        cartDrawer.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeCart() {
+        cartDrawer.classList.remove("open");
+        cartOverlay.classList.remove("open");
+        cartDrawer.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    openCartButton.addEventListener("click", openCart);
+    closeCartButton.addEventListener("click", closeCart);
+    cartOverlay.addEventListener("click", closeCart);
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeCart();
+        }
+    });
+
+    function renderCart() {
+
+        cartCount.textContent = cart.reduce(function (sum, item) {
+            return sum + item.quantity;
+        }, 0);
+
+        const total = cart.reduce(function (sum, item) {
+            return sum + item.price * item.quantity;
+        }, 0);
+
+        cartTotal.textContent = "Rs. " + total.toLocaleString("en-PK");
+
+        cartItems.replaceChildren();
+
+        if (cart.length === 0) {
+            const empty = document.createElement("p");
+            empty.className = "empty-cart";
+            empty.textContent =
+                "Your bag is waiting for something lovely.";
+
+            cartItems.appendChild(empty);
+            return;
+        }
+
+        cart.forEach(function (item) {
+
+            const row = document.createElement("div");
+            row.className = "cart-item";
+
+            const info = document.createElement("div");
+
+            const name = document.createElement("h4");
+            name.textContent = item.name;
+
+            const price = document.createElement("p");
+            price.textContent =
+                "Rs. " + item.price.toLocaleString("en-PK") +
+                " × " + item.quantity;
+
+            const remove = document.createElement("button");
+            remove.className = "remove-btn";
+            remove.textContent = "Remove";
+            remove.type = "button";
+
+            remove.addEventListener("click", function () {
+                const index = cart.indexOf(item);
+
+                if (index !== -1) {
+                    cart.splice(index, 1);
+                }
+
+                renderCart();
+            });
+
+            info.append(name, price, remove);
+            row.appendChild(info);
+            cartItems.appendChild(row);
+        });
+    }
+
+    document.querySelectorAll(".add-btn").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const name = button.dataset.name;
+            const price = Number(button.dataset.price);
+
+            if (!name || !Number.isFinite(price) || price < 0) {
+                return;
+            }
+
+            const existing = cart.find(function (item) {
+                return item.name === name;
+            });
+
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+
+            renderCart();
+            openCart();
+
+            const oldText = button.textContent;
+            button.textContent = "Added ✓";
+
+            window.setTimeout(function () {
+                button.textContent = oldText;
+            }, 1000);
+        });
+    });
+
+    checkoutButton.addEventListener("click", function () {
+
+        if (cart.length === 0) {
+            alert("Your bag is empty. Add a product first!");
+            return;
+        }
+
+        alert(
+            "Thank you for visiting ILSEA!\n\n" +
+            "This is a demo website. Online payment and real orders " +
+            "are not connected yet."
+        );
+    });
+
+    /* CONTACT FORM */
+
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        formMessage.textContent =
+            "Thank you for your message! This demo does not send emails.";
+
+        contactForm.reset();
+    });
+
+    /* SCROLL REVEAL */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+
+        }, {
+            threshold: 0.12
+        });
+
+        revealElements.forEach(function (element) {
+            observer.observe(element);
+        });
+
+    } else {
+
+        revealElements.forEach(function (element) {
+            element.classList.add("visible");
+        });
+    }
+
+    renderCart();
+
+});
+</script>
+
+</body>
+</html>
