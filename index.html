@@ -1184,7 +1184,31 @@ footer p {
         transform: none;
     }
 }
+/* DARK MODE */
+body.dark-mode {
+    background: #1e1e1e;
+    color: #f5f5f5;
+}
+
+body.dark-mode header {
+    background: #292929;
+    border-bottom-color: #444;
+}
+
+body.dark-mode nav a {
+    color: #f5f5f5;
+}
+
+body.dark-mode section {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode footer {
+    background: #292929;
+    color: #f5f5f5;
+}
 </style>
+<script src="script.js" defer></script>
 </head>
 
 <body>
@@ -1206,6 +1230,7 @@ footer p {
         <button class="cart-button" id="openCart">
             Bag <span id="cartCount">0</span>
         </button>
+        <button class="cart-button" id="themeButton">Dark Mode</button>
         <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
     </div>
 </header>
@@ -1616,33 +1641,37 @@ footer p {
             </p>
         </div>
 
-        <form class="contact-form" id="contactForm">
+<form class="contact-form" id="contactForm" novalidate>
 
-            <input
-                type="text"
-                id="contactName"
-                placeholder="Your Name"
-                required
-            >
+    <label for="contactName">Your Name</label>
+    <input
+        type="text"
+        id="contactName"
+        placeholder="Enter your full name"
+    >
+    <small id="nameError" class="field-error"></small>
 
-            <input
-                type="email"
-                id="contactEmail"
-                placeholder="Your Email"
-                required
-            >
+    <label for="contactEmail">Your Email</label>
+    <input
+        type="text"
+        id="contactEmail"
+        placeholder="Enter your email address"
+    >
+    <small id="emailError" class="field-error"></small>
 
-            <textarea
-                id="contactMessage"
-                placeholder="Write your message..."
-                required
-            ></textarea>
+    <label for="contactMessage">Your Message</label>
+    <textarea
+        id="contactMessage"
+        placeholder="Write your message..."
+        rows="5"
+    ></textarea>
+    <small id="messageError" class="field-error"></small>
 
-            <button type="submit">Send Message</button>
+    <button type="submit">Send Message</button>
 
-            <p id="formMessage" role="status"></p>
+    <p id="formMessage" role="status"></p>
 
-        </form>
+</form>
 
     </div>
 
@@ -2018,3 +2047,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+<button id="menu-btn">☰ Menu</button>
+
+<!-- Apni existing navigation mein ye ID add karo -->
+<nav id="navigation">
+    <!-- Tumhare existing links yahan rahenge -->
+</nav>
+
+<button id="theme-btn">Dark mode</button>

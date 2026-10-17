@@ -1618,3 +1618,67 @@ h2 span {
 .product-card:nth-child(4) .product-art {
     background: linear-gradient(140deg, #f0e6f3, #d4c2df);
 }
+/* Theme colors */
+:root {
+    --bg: #fff7ed;
+    --text: #1f2937;
+    --card: #ffffff;
+    --accent: #657153;
+}
+
+body.dark {
+    --bg: #111827;
+    --text: #f9fafb;
+    --card: #1f2937;
+    --accent: #c5d0a8;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+
+nav a {
+    color: var(--text);
+}
+
+/* Mobile menu */
+#menu-btn {
+    display: block;
+}
+
+#navigation {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+#navigation.open {
+    display: flex;
+}
+
+/* Wider screens */
+@media (min-width: 768px) {
+    #menu-btn {
+        display: none;
+    }
+
+    #navigation {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+/* Buttons */
+#menu-btn,
+#theme-btn {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
